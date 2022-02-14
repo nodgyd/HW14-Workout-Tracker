@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const workOuts = require("../models/excercises.js");
+const Workout = require("../models/exercises");
 
-router.put("/api/workouts/:id", function(req,res){
+router.put("/api/Workout/:id", function(req,res){
 //update workout
-workOuts.findByIdAndUpdate(
+Workout.findByIdAndUpdate(
     params.id,{
         $push: {exercises: body} },
         {new: true}
@@ -11,24 +11,24 @@ workOuts.findByIdAndUpdate(
 .catch(err => {
     console.log(err)
     res.json(err)
-})
+})})
 
-router.post("/api/workouts/", function(req,res){
+router.post("/api/Workout/", function(req,res){
 //create workout
-workOuts.create({}).then(data =>
+Workout.create({}).then(data =>
     res.json(data)).catch(err => {
         console.log(err)
         res.json(err)
-})
+})})
 
-router.get("/api/workouts/range", function(req,res){
-//query database for workouts
-workOuts.find().then(data => {
+router.get("/api/Workout/range", function(req,res){
+//query database for Workout
+Workout.find().then(data => {
     res.json(data)
 }).catch(err => {
     res.json(err)
 
-})
+})})
 
 
 
