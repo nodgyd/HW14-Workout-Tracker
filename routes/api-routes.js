@@ -1,5 +1,15 @@
 const router = require("express").Router();
-const Workout = require("../models/exercises");
+const Workout = require("../models/exercise");
+
+
+router.get("/api/Workout/", function(req,res){
+    //query database for Workout
+    Workout.find().then(data => {
+        res.json(data)
+    }).catch(err => {
+        res.json(err)
+    
+    })});
 
 router.put("/api/Workout/:id", function(req,res){
 //update workout
