@@ -11,7 +11,7 @@ router.get("/stats", function (req, res) {
 
 })
 
-router.get("exercise", function (req, res) {
+router.get("/exercise", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/exercise.html"))
 
 })
